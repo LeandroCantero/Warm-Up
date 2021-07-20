@@ -33,6 +33,10 @@ public class Post {
         this.creation_date = creation_date;
     }
 
+    public Post() {
+
+    }
+
     public Long getId() {
         return id;
     }

@@ -33,7 +33,7 @@ public class PostService implements IPostService {
 
     @Override
     public Object findById(Long id){
-        if (postRepository.findById(id) == null) {
+        if (!postRepository.findById(id).isPresent()) {
             return "This post doesn't exist";
         }
         else {

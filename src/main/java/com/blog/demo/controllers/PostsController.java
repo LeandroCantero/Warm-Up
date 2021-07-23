@@ -34,7 +34,7 @@ public class PostsController {
     @PostMapping
     public ResponseEntity<Object> save(@RequestBody PostsRequest postsRequest){
         postService.createPost(postsRequest);
-        return ResponseEntity.ok("Character created");
+        return ResponseEntity.ok("Post created");
     }
 
     @DeleteMapping(value = "/{id}")

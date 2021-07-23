@@ -2,6 +2,7 @@ package com.blog.demo.models;
 
 import com.blog.demo.enums.UserRole;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -31,7 +32,7 @@ public class User implements UserDetails, Serializable {
     private String email;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.MERGE)
-    @JsonBackReference
+    @JsonManagedReference
     private Set<Post> posts;
 
     @Builder.Default

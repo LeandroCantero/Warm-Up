@@ -1,5 +1,6 @@
 package com.blog.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
@@ -20,7 +21,7 @@ public class Post {
     private Date creation_date;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JsonManagedReference
+    @JsonBackReference
     @JoinColumn(name = "user_id")
     private User user;
 
@@ -89,7 +90,7 @@ public class Post {
         this.user = user;
     }
 
-    public User getGenre() {
+    public User getUser() {
         return user;
     }
 }
